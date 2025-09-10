@@ -115,7 +115,7 @@ def run_agent(pod_name, namespace):
         fallback_prompt = (
             f"Review the OpenShift logs for the pod '{pod_name}' in the '{namespace}' namespace. "
             "If the logs indicate an error, search for the solution and create a summary message. "
-            "Then create a Github issue with owner 'redhat-ai-services', repo 'etx-agentic-ai', "
+            "Then create a Github issue with owner 'redhat-ai-services', repo 'nstrug', "
             "title 'Issue with Etx pipeline', and body containing the error summary."
         )
         user_prompts = [fallback_prompt]
