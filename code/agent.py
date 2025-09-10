@@ -66,7 +66,7 @@ def run_agent(pod_name, namespace):
     #     "If the logs indicate an error search for the solution, " 
     #     "create a summary message with the category and explanation of the error, "
     #     'create a Github issue using {"name":"create_issue","arguments":'
-    #     '{"owner":"redhat-ai-services","repo":"etx-agentic-ai",'
+    #     '{"owner":"nstrug","repo":"etx-agentic-ai",'
     #     '"title":"Issue with Etx pipeline","body":"summary of the error"}}}. DO NOT add any optional parameters.'
     # ]
     # Build prompt safely to avoid f-string formatting issues
@@ -95,7 +95,7 @@ def run_agent(pod_name, namespace):
 
         NOW, YOUR TURN:
 
-        Input: Review the OpenShift logs for the pod '{pod_name}' in the '{namespace}' namespace. If the logs indicate an error, search for the solution, create a summary message with the category and explanation of the error, and create a Github issue using {{\"name\":\"create_issue\",\"arguments\":{{\"owner\":\"\",\"repo\":\"etx-agentic-ai\",\"title\":\"Issue with Etx pipeline\",\"body\":\"<summary of the error>\"}}}}. DO NOT add any optional parameters.
+        Input: Review the OpenShift logs for the pod '{pod_name}' in the '{namespace}' namespace. If the logs indicate an error, search for the solution, create a summary message with the category and explanation of the error, and create a Github issue using {{\"name\":\"create_issue\",\"arguments\":{{\"owner\":\"nstrug\",\"repo\":\"etx-agentic-ai\",\"title\":\"Issue with Etx pipeline\",\"body\":\"<summary of the error>\"}}}}. DO NOT add any optional parameters.
 
         ONLY tail the last 10 lines of the pod, no more.
         The JSON object formatted EXACTLY as outlined above.
@@ -115,7 +115,7 @@ def run_agent(pod_name, namespace):
         fallback_prompt = (
             f"Review the OpenShift logs for the pod '{pod_name}' in the '{namespace}' namespace. "
             "If the logs indicate an error, search for the solution and create a summary message. "
-            "Then create a Github issue with owner 'redhat-ai-services', repo 'nstrug', "
+            "Then create a Github issue with owner 'nstrug', repo 'nstrug', "
             "title 'Issue with Etx pipeline', and body containing the error summary."
         )
         user_prompts = [fallback_prompt]
